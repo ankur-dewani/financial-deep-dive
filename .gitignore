@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# Office temp files
+~$*
+
+# IDE
+.idea/
+.vscode/
+*.swp
