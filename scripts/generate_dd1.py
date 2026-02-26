@@ -63,7 +63,7 @@ PROBLEM_STATEMENT = (
 
 FIVE_WHY_ANALYSIS = (
     "Question 1: Why is this business unit not in model?\n"
-    "Answer: The business unit still runs its pre-acquisition cost structure. No function was restructured "
+    "Answer: The business unit still runs its pre acquisition cost structure. No function was restructured "
     "for the Central Factory model. Expenses total $72.2M (91.1% of revenue vs 30% benchmark) with all 8 "
     "benchmark categories over target. The largest absolute gaps: Engineering +$9.4M, Hosting +$6.6M, "
     "Product +$12.0M, Sales +$7.4M.\n"
@@ -71,11 +71,11 @@ FIVE_WHY_ANALYSIS = (
 
     "Question 2: Why start with Shared Services when Engineering has a larger gap?\n"
     "Answer: Engineering ($9.4M gap) requires building a target role structure from scratch. Shared Services "
-    "has a pre-defined Central Finance model with exact roles and rates, enabling a specific fix with quantified "
+    "has a predefined Central Finance model with exact roles and rates, enabling a specific fix with quantified "
     "savings in 16 weeks. This proves the integration methodology works before applying it to larger, more complex "
-    "functions. Within Shared Services ($15.8M, 12% of revenue, 74 employees, 11 G&A sub-departments), F&A alone "
+    "functions. Within Shared Services ($15.8M, 12% of revenue, 74 employees, 11 G&A sub departments), F&A alone "
     "costs $3.82M (4.8% of revenue) and exceeds the entire 4.5% Shared Services benchmark by itself.\n"
-    "Evidence: SS Breakdown sheet. F&A highlighted: 18 employees, $1.45M headcount, $2.37M non-HC OPEX.\n\n"
+    "Evidence: SS Breakdown sheet. F&A highlighted: 18 employees, $1.45M headcount, $2.37M non HC OPEX.\n\n"
 
     "Question 3: Why does Finance and Accounting cost $3.82M?\n"
     "Answer: 51% of F&A spend ($1.96M) flows to external providers. $1.43M goes to outsourced services "
@@ -104,7 +104,7 @@ FIVE_WHY_ANALYSIS = (
 
 ROOT_CAUSE = (
     "No one was tasked with integrating Finance and Accounting into the Central Finance model.\n\n"
-    "The function operates as a fragmented multi-entity operation where 51% of cost ($1.96M) flows to "
+    "The function operates as a fragmented multi entity operation where 51% of cost ($1.96M) flows to "
     "external providers doing duplicated work across entities, and 18 internal staff coordinate vendor "
     "handoffs rather than executing standardized processes.\n\n"
     "At $3.82M (4.8% of revenue), F&A alone exceeds the entire Shared Services benchmark of 4.5%. "
@@ -122,9 +122,9 @@ def _build_fix_text() -> str:
 
     lines = [
         "Simplify Finance and Accounting first, then move to the Central Finance model.\n",
-        "Customer impact: Zero. F&A is a back-office function. No customer facing "
+        "Customer impact: Zero. F&A is a back office function. No customer facing "
         "processes change. The 87% recurring revenue base remains unaffected.\n",
-        "Target Central Finance Team (18 roles, standardized):\n",
+        "Target Central Finance Team (18 positions, standardized):\n",
     ]
 
     # Role table
@@ -134,24 +134,24 @@ def _build_fix_text() -> str:
         )
 
     lines.append(f"  Statutory audit (retained): ${target['statutory_audit']:,}/year")
-    lines.append(f"  Total in-model cost: ${target['total']:,}/year\n")
+    lines.append(f"  Total in model cost: ${target['total']:,}/year\n")
 
     lines.append("Cost Bridge:")
     lines.append(f"  Current F&A cost: ${summary['current_total']:,}")
-    lines.append(f"  Target in-model cost: ${summary['target_total']:,}")
+    lines.append(f"  Target in model cost: ${summary['target_total']:,}")
     lines.append(f"  Annual savings: ${summary['annual_savings']:,} ({summary['savings_pct']:.0%} reduction)")
     lines.append(f"  Margin impact: +{summary['annual_savings']/79_194_484:.1%} of revenue\n")
 
     lines.append("Why 18 people can absorb the outsourced work:")
-    lines.append("  Consolidating 7+ audit engagements into 1 or 2 eliminates duplicate entity-level work.")
-    lines.append("  One unified chart of accounts replaces multiple entity-specific structures.")
+    lines.append("  Consolidating 7+ audit engagements into 1 or 2 eliminates duplicate entity level work.")
+    lines.append("  One unified chart of accounts replaces multiple entity specific structures.")
     lines.append("  One close process replaces parallel close cycles per entity.")
     lines.append("  18 staff currently spend time on vendor coordination that disappears when work is in house.")
     lines.append("  AI close automation (see AI Opportunities) absorbs remaining volume increase.\n")
 
     lines.append("Feasibility: HIGH")
     lines.append("  Central Finance Roles spreadsheet provides exact target costs.")
-    lines.append("  F&A is back-office. Zero customer facing processes change.")
+    lines.append("  F&A is back office. Zero customer facing processes change.")
     lines.append("  This is the first function to prove the integration methodology. Engineering and Sales follow.\n")
 
     lines.append("Phased Implementation:\n")
@@ -169,7 +169,7 @@ def _build_fix_text() -> str:
     lines.append("  Bring outsourced work in house using simplified processes from Phase 1.")
     lines.append("  KPI: Reduce outsourced spend by 75% ($1.47M).\n")
 
-    lines.append("Phase 3: Optimization (weeks 13 to 16)")
+    lines.append("Phase 3: Finalize and measure (weeks 13 to 16)")
     lines.append("  Run first full close cycle on Central Finance model.")
     lines.append("  Terminate remaining vendor contracts.")
     lines.append("  Configure AI close automation on unified GL (see AI Opportunities).")
@@ -178,7 +178,7 @@ def _build_fix_text() -> str:
     lines.append("Risks:")
     lines.append("  Statutory compliance: Retain external audit for legal requirements ($200K).")
     lines.append("  Employee transition: Employees who do not fit Central Finance roles exit. Budget 2 to 3 replacements.")
-    lines.append("  Multi-jurisdiction tax: Retain 1 to 2 outsourced tax advisors for non-US filings during transition. Budget $50K to $75K.")
+    lines.append("  Multi jurisdiction tax: Retain 1 to 2 outsourced tax advisors for non US filings during transition. Budget $50K to $75K.")
 
     return "\n".join(lines)
 
@@ -190,7 +190,7 @@ AI_OPPORTUNITIES = (
     "Current cost driver: Close cycle takes 15 to 20 days. Accountants spend time on matching "
     "and data entry rather than analysis.\n"
     "AI solution: I configure an LLM reconciliation agent on the unified GL (post migration). "
-    "It auto-matches 100% of intercompany transactions, generates recurring journal entries, "
+    "It auto matches 100% of intercompany transactions, generates recurring journal entries, "
     "and routes only true exceptions for human review. This replaces manual matching entirely.\n"
     "Estimated impact: Close cycle drops from 15 to 20 days to under 5 days. "
     "Reduces Senior Accountant need from 5 to 3, saving an additional $120K/year on top of the structural fix.\n"
@@ -200,14 +200,14 @@ AI_OPPORTUNITIES = (
     "Current cost driver: $1.96M in outsourced F&A spend had no real time monitoring. "
     "Cost creep went undetected between review cycles.\n"
     "AI solution: I build a Claude Code pipeline on existing AP data feeds. It classifies vendor spend daily, "
-    "detects duplicates, flags benchmark non-compliance, and produces a weekly list of vendors to cut, "
+    "detects duplicates, flags benchmark non compliance, and produces a weekly list of vendors to cut, "
     "renegotiate, or consolidate.\n"
-    "Estimated impact: Prevents post-transformation cost drift. $200K to $300K annual savings by catching "
+    "Estimated impact: Prevents post transformation cost drift. $200K to $300K annual savings by catching "
     "vendor creep that would otherwise erode the $2.62M structural savings.\n"
     "Complexity: Low. Runs on existing AP data within 4 to 6 weeks.\n\n"
     "90 Day AI Roadmap:\n"
     "  Week 1 to 4: I build the spend intelligence pipeline on existing AP data. Quick win.\n"
-    "  Week 4 to 8: I pilot LLM reconciliation on the highest-volume entity.\n"
+    "  Week 4 to 8: I pilot LLM reconciliation on the highest volume entity.\n"
     "  Week 8 to 12: I roll out close automation across all entities. Target: sub-5 day close."
 )
 
@@ -223,18 +223,18 @@ AI_TOOLS_USED = (
     "2. How they helped my analysis\n\n"
     "Claude Code processed 2,092 OPEX rows and 1,000 COGS rows to build the benchmark mapping "
     "in minutes. It identified the F&A cost anomaly (4.8% of revenue for one "
-    "sub-department exceeding the entire 4.5% Shared Services benchmark) by aggregating "
-    "employee and non-employee data simultaneously. All 5 analysis sheets in the P&L workbook "
+    "sub department exceeding the entire 4.5% Shared Services benchmark) by aggregating "
+    "employee and non employee data simultaneously. All 5 analysis sheets in the P&L workbook "
     "were generated programmatically from the 8 source tabs.\n\n"
     "The cost model was built by reading the Central Finance Roles spreadsheet and mapping current "
     "salaries to role tiers by salary band, producing the $2.62M savings figure with "
     "full traceability.\n\n"
     "3. How this approach translates to the role\n\n"
     "As VP of Operations, I run this methodology on every acquired business unit: "
-    "ingest the P&L, map to benchmarks, identify the highest-gap function, deep dive to root cause, "
+    "ingest the P&L, map to benchmarks, identify the highest gap function, deep dive to root cause, "
     "and model the Central Factory fix with specific roles and costs.\n\n"
     "The AI tooling makes this repeatable at acquisition pace. Instead of 4 to 6 weeks per BU, "
-    "this approach produces a board-ready deep dive in days. That matters when the goal is one "
+    "this approach produces a board ready deep dive in days. That matters when the goal is one "
     "acquisition per week."
 )
 

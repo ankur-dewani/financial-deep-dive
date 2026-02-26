@@ -77,12 +77,11 @@ def get_current_fa_cost() -> dict:
 def get_target_fa_model() -> dict:
     """Define the target Central Finance team structure.
 
-    Maps 18 current employees to standardized Central Finance roles
-    based on salary bands:
-      $150K+      -> VP of Finance (2)
-      $85K-$150K  -> Finance Manager (2)
-      $55K-$85K   -> Senior Accountant (5)
-      Under $55K  -> Accountant (9)
+    Target Central Finance team structure based on role tiers:
+      $150K+        -> VP of Finance (1)
+      $85K to $150K -> Finance Manager (2)
+      $55K to $85K  -> Senior Accountant (5)
+      Under $55K    -> Accountant (10)
 
     Plus: $200K for statutory audits that cannot be eliminated.
     """

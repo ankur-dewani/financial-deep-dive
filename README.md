@@ -73,7 +73,7 @@ Every category is over model. The acquisition was never operationally transforme
 
 ### Why F&A
 
-The evaluator provided a Central Finance Roles spreadsheet with 5 specific roles and hourly rates. This signals where the deep dive should focus. F&A also has the clearest single-function story:
+The evaluator provided a Central Finance Roles spreadsheet with 5 specific roles and hourly rates. This signals where the deep dive should focus. F&A also has the clearest single function story:
 
 - F&A costs $3.82M (4.8% of revenue)
 - That alone exceeds the entire Shared Services benchmark (4.5%)
@@ -84,15 +84,15 @@ The evaluator provided a Central Finance Roles spreadsheet with 5 specific roles
 
 | Why | Question | Answer |
 |---|---|---|
-| 1 | Why is this BU not in model? | Still running pre-acquisition cost structure. No function was restructured for Central Factory. All 8 categories over. |
-| 2 | Why start with Shared Services when Engineering has a larger gap? | Engineering requires inventing a role structure. F&A has a pre-defined Central Finance model with exact target costs, enabling a specific fix in 16 weeks. F&A alone ($3.82M, 4.8%) exceeds the entire SS benchmark. |
+| 1 | Why is this BU not in model? | Still running pre acquisition cost structure. No function was restructured for Central Factory. All 8 categories over. |
+| 2 | Why start with Shared Services when Engineering has a larger gap? | Engineering requires inventing a role structure. F&A has a predefined Central Finance model with exact target costs, enabling a specific fix in 16 weeks. F&A alone ($3.82M, 4.8%) exceeds the entire SS benchmark. |
 | 3 | Why does F&A cost $3.82M? | 51% ($1.96M) goes to external providers. 18 staff coordinate vendor handoffs instead of executing standardized processes. |
 | 4 | Why is 51% going to external providers? | Each entity kept its own audit firm, tax advisor, and close process. Duplicate work across entities, no consolidation. |
 | 5 | Why do these fragmented processes persist? | No one was tasked with integration. A leadership gap, not a technical one. The Central Finance Roles define the target state. |
 
 ### Root Cause
 
-No one was tasked with integrating Finance and Accounting into the Central Finance model. The function runs as a fragmented multi-entity operation where 51% of cost flows to external providers doing duplicated work, and 18 internal staff coordinate vendor handoffs rather than executing standardized processes. The fix exists. The gap is execution.
+No one was tasked with integrating Finance and Accounting into the Central Finance model. The function runs as a fragmented multi entity operation where 51% of cost flows to external providers doing duplicated work, and 18 internal staff coordinate vendor handoffs rather than executing standardized processes. The fix exists. The gap is execution.
 
 ---
 
@@ -112,7 +112,7 @@ Replace fragmented F&A with a Central Finance team using standardized roles:
 | Metric | Value |
 |---|---|
 | Current F&A cost | $3,822,076 |
-| Target in-model cost | $1,200,000 |
+| Target in model cost | $1,200,000 |
 | Annual savings | $2,622,076 |
 | Reduction | 69% |
 
@@ -123,10 +123,10 @@ Implementation: 16 weeks. Simplify first: document all F&A processes, map duplic
 ## AI Opportunities
 
 **Area 1: LLM Driven Financial Close**
-I configure an LLM reconciliation agent on the unified GL. It auto-matches 100% of intercompany transactions, generates journal entries, and routes only true exceptions for human review. Close cycle drops from 15 to 20 days to under 5 days. Reduces Senior Accountant need from 5 to 3. Additional savings: $120K/year.
+I configure an LLM reconciliation agent on the unified GL. It auto matches 100% of intercompany transactions, generates journal entries, and routes only true exceptions for human review. Close cycle drops from 15 to 20 days to under 5 days. Reduces Senior Accountant need from 5 to 3. Additional savings: $120K/year.
 
 **Area 2: AI Spend Intelligence**
-I build a Claude Code pipeline on existing AP data. It classifies vendor spend daily, detects duplicates, flags benchmark non-compliance, and produces a weekly list of vendors to cut, renegotiate, or consolidate. Prevents post-transformation cost drift. Additional savings: $200K to $300K/year.
+I build a Claude Code pipeline on existing AP data. It classifies vendor spend daily, detects duplicates, flags benchmark non compliance, and produces a weekly list of vendors to cut, renegotiate, or consolidate. Prevents post transformation cost drift. Additional savings: $200K to $300K/year.
 
 ---
 
@@ -138,7 +138,7 @@ The output P&L workbook preserves all 8 original sheets and adds 5 analysis shee
 |---|---|---|
 | Revenue Analysis | P&L Summary, RecurringRevenue, PSORevenue, PerpetualRevenue | Revenue mix breakdown (87% recurring, 12% PSO, 2% perpetual) with P&L summary |
 | Benchmark Mapping | Benchmarks, Empl, OPEX-NEmpl, COGS-NEmpl | Every expense mapped to 8 benchmark categories with actual vs target % |
-| SS Breakdown | Empl, OPEX-NEmpl | Shared Services broken into 11 G&A sub-departments with HC and non-HC costs |
+| SS Breakdown | Empl, OPEX-NEmpl | Shared Services broken into 11 G&A sub departments with HC and non-HC costs |
 | FA Deep Dive | Empl, OPEX-NEmpl, Central Finance Roles | F&A cost by component, Central Finance target model, savings calculation |
 | FA Employee Analysis | Empl, Central Finance Roles | 18 current employees mapped to Central Finance role tiers by salary band |
 
@@ -164,7 +164,7 @@ But the question is not "what is the biggest gap?" The question is "where can I 
 
 ### Where AI Was Used
 
-Claude Code drove every step of this analysis. It parsed 2,092 OPEX rows and 1,000 COGS rows to build the benchmark mapping. It identified the F&A cost anomaly by aggregating employee and non-employee data simultaneously, something that would have taken multiple manual pivot tables. It built the cost model by reading the Central Finance Roles spreadsheet and mapping current salaries to role tiers by salary band. And it generated both output files (the annotated P&L workbook and the DD1 document) programmatically.
+Claude Code drove every step of this analysis. It parsed 2,092 OPEX rows and 1,000 COGS rows to build the benchmark mapping. It identified the F&A cost anomaly by aggregating employee and non employee data simultaneously, something that would have taken multiple manual pivot tables. It built the cost model by reading the Central Finance Roles spreadsheet and mapping current salaries to role tiers by salary band. And it generated both output files (the annotated P&L workbook and the DD1 document) programmatically.
 
 The important thing is not that I used AI. The important thing is that AI made the analysis repeatable. If I receive another P&L workbook next week for a different acquisition, the same scripts produce the same structured output in minutes. That matters when the operating model targets one acquisition per week.
 
@@ -172,7 +172,7 @@ The important thing is not that I used AI. The important thing is that AI made t
 
 Three decisions required human judgment, not just data processing:
 
-1. **Choosing F&A over Engineering.** Engineering has a $9.4M gap but no pre-defined target model. F&A has the Central Finance Roles file with exact roles and rates. The right move is to fix what you can specify precisely, prove the methodology, then apply it to larger functions. Fixing F&A first also means simplifying the function before moving it to Central, not dumping a fragmented process onto a shared service.
+1. **Choosing F&A over Engineering.** Engineering has a $9.4M gap but no predefined target model. F&A has the Central Finance Roles file with exact roles and rates. The right move is to fix what you can specify precisely, prove the methodology, then apply it to larger functions. Fixing F&A first also means simplifying the function before moving it to Central, not dumping a fragmented process onto a shared service.
 
 2. **Setting the target team at 18 people.** I kept total headcount at 18 but restructured the role mix to Central Finance tiers. The savings come from eliminating $1.96M in duplicated outsourced work, not from layoffs. Consolidating 7+ audit engagements into 1 to 2, unifying the chart of accounts, and standardizing the close process removes the duplication that made external providers necessary.
 
@@ -182,10 +182,10 @@ Three decisions required human judgment, not just data processing:
 
 1. **Apply this methodology to Engineering and Sales.** Engineering has a $9.4M gap. Sales has a $7.4M gap. With the F&A proof of concept complete, I apply the same process: benchmark mapping, 5 Why root cause, Central Factory target model, phased migration.
 
-2. **Vendor level breakout.** The $1.43M in outsourced services is an aggregate. With individual vendor data, I build a contract-by-contract termination schedule with specific dates and notice periods.
+2. **Vendor level breakout.** The $1.43M in outsourced services is an aggregate. With individual vendor data, I build a contract by contract termination schedule with specific dates and notice periods.
 
 3. **Conservative scenarios.** The current model assumes all 18 employees fit Central Finance roles. In practice, some will not pass skills assessments. I would run 70% and 85% scenarios alongside the 100% target to give the CEO a realistic range.
 
-4. **Post-migration KPIs.** Quarterly tracking: close cycle under 5 days, F&A cost under $1.2M annualized, outsourced spend under $250K, zero duplicate vendor payments. Without these metrics, cost structures drift back.
+4. **Post migration KPIs.** Quarterly tracking: close cycle under 5 days, F&A cost under $1.2M annualized, outsourced spend under $250K, zero duplicate vendor payments. Without these metrics, cost structures drift back.
 
 The Central Factory methodology turns "this feels expensive" into exact dollar gaps with a specific fix. "F&A costs 4.8% of revenue versus a 4.5% Shared Services benchmark, and 51% of that cost flows to unmanaged external providers." That precision is what I use to run a 16 week transformation with confidence in the outcome.
